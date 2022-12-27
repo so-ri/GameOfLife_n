@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92cfe64d-8568-4515-a5f5-72908fb9ea41" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Cell/BlueCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cell/Cell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cell/DeadCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cell/RedCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Neighbors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CellFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CellFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -41,6 +50,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/eliaa/Documents/GitHub/GameOfLife_n/GameOfLife_n",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,6 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1672148514490</updated>
       <workItem from="1672148516246" duration="646000" />
+      <workItem from="1672155785361" duration="4468000" />
     </task>
     <task id="LOCAL-00001" summary="no">
       <created>1672148838124</created>
@@ -100,6 +111,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

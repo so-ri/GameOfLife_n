@@ -1,12 +1,14 @@
+import Cell.*;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class CellFactory {
-    private final Map<cellStatus, Cell> flyweights = new HashMap<>();
-
-    public Cell getCell(cellStatus cellStatus) {
-        if (!flyweights.containsKey(cellStatus)) {
-
+class CellFactory {
+    public static Cell getCell(cellStatus cellStatus) {
+        switch(cellStatus) {
+            case RED: return new RedCell();
+            case BLUE: return new BlueCell();
+            default: return new DeadCell();
         }
     }
 }

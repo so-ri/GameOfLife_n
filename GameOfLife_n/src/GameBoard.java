@@ -1,12 +1,36 @@
-import java.util.HashMap;
-import java.util.Map;
+import Cell.*;
+
+import java.util.Arrays;
 
 public class GameBoard {
 
-    private static final Map<String, Cell> board = new HashMap<>();
+    private Cell[][] board = new Cell[200][100];
 
+    public void initialize(int[][] states) {        //fills 2 dimensional Array with DeadCells and a starting Pattern
+        for (Cell[] cellArray : board) {
+            Arrays.fill(cellArray, CellFactory.getCell(cellStatus.DEAD));
+        }
 
-    String key = x + "." + y;
+        board[49][49] = CellFactory.getCell(cellStatus.BLUE);
+        board[149][49] = CellFactory.getCell(cellStatus.RED);
+    }
 
+    private Neighbors getNext(int i, int j) {       //gets neighboring colors of a cell
+
+        short RedCounter = 0;
+        short BlueCounter = 0;
+
+        for (int x = i-1; x <= i+1; x++) {          //iterates through neighboring x-values
+            if(x < 0 || x >= 200) continue;         //if a value is out of bounds (edge of map) then skip
+            for (int y = j-1; y <= j+1; y++) {      //iterates through neighboring y-values
+                if(y < 0 || y >= 100) continue;     //if a value is out of bounds (edge of map) then skip
+
+                if(board[x][y].getClass() == BlueCell.class) BlueCounter += 1;
+                if(board[x][y].getClass() == RedCell.class) RedCounter += 1;
+            }
+        }
+
+        return new Neighbors(RedCounter, BlueCounter);
+    }
 
 }
