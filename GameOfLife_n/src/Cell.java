@@ -1,7 +1,7 @@
 public class Cell {
     private cellStatus cellStatus;
 
-    public Cell(short x, short y) {
+    public Cell() {
         this.cellStatus = cellStatus.DEAD;
     }
 
