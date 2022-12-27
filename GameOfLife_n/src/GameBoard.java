@@ -20,12 +20,17 @@ public class GameBoard {
         players[1] = new Player();
     }
 
+    public void playerMove(){
+        //TODO GUI INPUT
+    }
+
     public void update() {      //sets the next state of the cells according to game rules but doesn't apply them yet
         for (int i = 0; i < 200; i++) {
             for (int j = 0; j < 100; j++) {
                 board[i][j].nextState(getNext(i,j));
             }
         }
+
     }
 
     public void nextGeneration() {      //generates new generation of cells (with updated states)
@@ -39,11 +44,8 @@ public class GameBoard {
             }
         }
         numGeneration += 1;
-        players[0].receiveNumCells(numBlue);
-        players[1].receiveNumCells(numRed);
+        GameController.updateNumCells(numBlue,numRed);
     }
-
-
 
     private Neighbors getNext(int i, int j) {       //gets neighboring colors of a cell
 
@@ -62,5 +64,7 @@ public class GameBoard {
 
         return new Neighbors(RedCounter, BlueCounter);
     }
+
+
 
 }
