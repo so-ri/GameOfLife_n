@@ -7,7 +7,7 @@ public class GameBoard {
     private Cell[][] board = new Cell[200][100];
     private Player[] players = new Player[2];
 
-    public void initializeBoard(int[][] states) {        //fills 2 dimensional Array with DeadCells and a starting Pattern
+    public void initializeBoard() {        //fills 2 dimensional Array with DeadCells and a starting Pattern
         for (Cell[] cellArray : board) {
             Arrays.fill(cellArray, CellFactory.getCell(cellStatus.DEAD));
         }
@@ -20,7 +20,7 @@ public class GameBoard {
         players[1] = new Player();
     }
 
-    public void playerMove(){
+    public void playerMove(Player player){
         //TODO GUI INPUT
     }
 

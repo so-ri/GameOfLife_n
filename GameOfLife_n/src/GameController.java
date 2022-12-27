@@ -1,3 +1,7 @@
+import java.sql.Array;
+import java.util.Arrays;
+
+
 public class GameController {
     private static Player[] players = new Player[2];
     private GameBoard board;
@@ -21,11 +25,36 @@ public class GameController {
         return uniqueInstance;
     }
 
-    public void startGame(){
+    public void startGame(){            //gameflow
+        byte winner;
+        byte starter = 0;
+        byte other = 1;
+        board.initializeBoard();
 
-        //1. Player Move
-        //2. update
-        //3. next generation
+        //decide starting player
+        String[] names = {players[0].getName(), players[0].getName()};
+        Arrays.sort(names);
+        if (names[0] == players[1].getName()) {starter = 1; other = 0;}
+
+        //Iterations
+        while(true) {
+            board.playerMove(players[starter]);
+            board.update();
+            board.nextGeneration();
+            if(players[starter].hasWon()) {winner = starter; break;}
+
+            board.playerMove(players[other]);
+            board.update();
+            board.nextGeneration();
+            if(players[other].hasWon()) {winner = other; break;}
+
+
+
+            }
+
+        //done msg
+
+        }
 
     }
 

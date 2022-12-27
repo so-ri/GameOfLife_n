@@ -6,4 +6,11 @@ public class Player {
 
     //evt getter
 
+    public boolean hasWon(){
+        return true;
+    }
+
+    public String getName() {
+        return null;
+    }
 }
