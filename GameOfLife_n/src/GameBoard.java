@@ -3,17 +3,23 @@ import Cell.*;
 import java.util.Arrays;
 
 public class GameBoard {
-
+    private short numGeneration = 0;
     private Cell[][] board = new Cell[200][100];
+    private Player[] players = new Player[2];
 
-    public void initialize(int[][] states) {        //fills 2 dimensional Array with DeadCells and a starting Pattern
+    public void initializeBoard(int[][] states) {        //fills 2 dimensional Array with DeadCells and a starting Pattern
         for (Cell[] cellArray : board) {
             Arrays.fill(cellArray, CellFactory.getCell(cellStatus.DEAD));
         }
-
         board[49][49] = CellFactory.getCell(cellStatus.BLUE);
         board[149][49] = CellFactory.getCell(cellStatus.RED);
     }
+
+    public void initializePlayers(){
+        players[0] = new Player();
+        players[1] = new Player();
+    }
+
     public void update() {      //sets the next state of the cells according to game rules but doesn't apply them yet
         for (int i = 0; i < 200; i++) {
             for (int j = 0; j < 100; j++) {
@@ -23,11 +29,18 @@ public class GameBoard {
     }
 
     public void nextGeneration() {      //generates new generation of cells (with updated states)
+        short numBlue = 0;
+        short numRed = 0;
         for (int i = 0; i < 200; i++) {
             for (int j = 0; j < 100; j++) {
+                if (board[i][j].getNextState() == cellStatus.BLUE) numBlue += 1;
+                if (board[i][j].getNextState() == cellStatus.BLUE)  numRed += 1;
                 board[i][j] = CellFactory.getCell(board[i][j].getNextState());
             }
         }
+        numGeneration += 1;
+        players[0].receiveNumCells(numBlue);
+        players[1].receiveNumCells(numRed);
     }
 
 
