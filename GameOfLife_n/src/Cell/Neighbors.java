@@ -1,3 +1,5 @@
+package Cell;
+
 public class Neighbors {
     public final short Reds;
     public final short Blues;

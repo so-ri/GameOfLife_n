@@ -1,8 +1,5 @@
 import Cell.*;
 
-import java.util.HashMap;
-import java.util.Map;
-
 class CellFactory {
     public static Cell getCell(cellStatus cellStatus) {
         switch(cellStatus) {

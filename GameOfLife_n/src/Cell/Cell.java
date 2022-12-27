@@ -1,5 +1,7 @@
 package Cell;
 
 public interface Cell {
-    void nextState(int[][] neighbors);
+
+    void nextState(Neighbors neighbors);
+    cellStatus getNextState();
 }

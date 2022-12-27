@@ -14,6 +14,23 @@ public class GameBoard {
         board[49][49] = CellFactory.getCell(cellStatus.BLUE);
         board[149][49] = CellFactory.getCell(cellStatus.RED);
     }
+    public void update() {      //sets the next state of the cells according to game rules but doesn't apply them yet
+        for (int i = 0; i < 200; i++) {
+            for (int j = 0; j < 100; j++) {
+                board[i][j].nextState(getNext(i,j));
+            }
+        }
+    }
+
+    public void nextGeneration() {      //generates new generation of cells (with updated states)
+        for (int i = 0; i < 200; i++) {
+            for (int j = 0; j < 100; j++) {
+                board[i][j] = CellFactory.getCell(board[i][j].getNextState());
+            }
+        }
+    }
+
+
 
     private Neighbors getNext(int i, int j) {       //gets neighboring colors of a cell
 
