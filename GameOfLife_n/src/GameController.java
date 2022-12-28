@@ -15,7 +15,7 @@ public class GameController {
     private GameController(){
         players[0] = new Player();
         players[1] = new Player();
-
+        board = new GameBoard();
     }
 
     public static synchronized GameController getInstance(){
@@ -60,4 +60,4 @@ public class GameController {
 
 
 
-}
+
